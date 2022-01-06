@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "ed9bb11c-c843-4b60-9c33-432fc2f93f28"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "MfeCoreSample": {
+      "projectType": "library",
+      "root": "projects/mfe-core-sample",
+      "sourceRoot": "projects/mfe-core-sample/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/mfe-core-sample/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mfe-core-sample/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/mfe-core-sample/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mfe-core-sample/src/test.ts",
+            "tsConfig": "projects/mfe-core-sample/tsconfig.spec.json",
+            "karmaConfig": "projects/mfe-core-sample/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "MfeCoreSample"
+}
