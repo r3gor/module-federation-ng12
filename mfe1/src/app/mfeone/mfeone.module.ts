@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MfeoneRoutingModule } from './mfeone-routing.module';
 import { HelloComponent } from './hello/hello.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,7 +12,10 @@ import { HelloComponent } from './hello/hello.component';
   ],
   imports: [
     CommonModule,
-    MfeoneRoutingModule
+    MfeoneRoutingModule,
+    HttpClientModule,
+  ],
+  providers: [
   ]
 })
 export class MfeoneModule { }
