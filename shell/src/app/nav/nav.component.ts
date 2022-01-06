@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-nav',
   template: `
     <p>Navigation: </p>
-    <a href="/remote"> Remote</a>
-    <a href="/"> Home</a>
+    <a pButton href="/remote"> Remote</a>
+    <a pButton href="/" style="margin-left: 8px;"> Home</a>
   `,
   styles: [
   ]
