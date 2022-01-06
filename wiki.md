@@ -187,3 +187,15 @@ import { ButtonModule } from 'primeng/button';
 })
 export class PrimeNgModule { }
 ```
+
+:::::::::: compartimos la dependencia de primeng
+[[[[ en mfe1 y shell ]]]]
+webpack.config.js
+...
+shared: {
+          "@angular/core": { singleton: true, strictVersion: true }, 
+          "@angular/common": { singleton: true, strictVersion: true }, 
+          "@angular/common/http": { singleton: true, strictVersion: true }, 
+          "@angular/router": { singleton: true, strictVersion: true },
+	  "ngprime": { singleton: true, strictVersion: true },
+...
