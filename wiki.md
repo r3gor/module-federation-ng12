@@ -126,3 +126,64 @@ shell\src\app\app-routing.module.ts
   },
 ...
 ```
+
+
+## PrimeNG
+
+```
+[[[[ en shell y mfe1: ]]]] 
+:::::::: instalar primeng
+> npm i primeng@12.2.3 --save
+> npm i primeicons --save
+
+:::::::: crear modulo para importar los componentes de primeng
+> ng g m primeNg
+
+[[[[ shell\src\app\app.module.ts y mfe1\src\app\app.module.ts ]]]]
+:::::::: añadir los modulos a los import
+exports: [
+    ...
+    PrimeNgModule,
+		...
+  ],
+
+:::::::: En ambos proyectos añadir los styles de primeng en el angular.json
+...
+"styles": [
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/vela-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
+            ],
+...
+
+:::::::: usar estilos de primeng en los proyectos
+shell\src\styles.css y mfe1\src\styles.css
+/* You can add global styles to this file, and also import other style files */
+html, body{
+  margin: 30px;
+  background-color: var( --surface-b );
+  font-family: var( --font-family );
+}
+
+.text-layout {
+  color: var( --text-color );
+}
+
+p, h1, h2 {
+  color: var( --text-color );
+}
+
+:::::::::: Para usar los componentes de primeng solo modificamos el modulo primeng
+ejemplo:
+import { NgModule } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
+
+@NgModule({
+  declarations: [],
+  exports: [
+    ButtonModule,
+  ]
+})
+export class PrimeNgModule { }
+```
